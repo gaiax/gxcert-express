@@ -10,20 +10,6 @@ function createServer(rpcHost, contractAddress, privateKey, common, allowedOrigi
 
   const writer = new GxCertWriter(web3, contractAddress, privateKey, common);
   const writerAccount = web3.eth.accounts.privateKeyToAccount(privateKey);
-  const tasks = [];
-  const failedTasks = [];
-
-  async function executeTask() {
-    for (;tasks.length > 0;) {
-      const task = tasks.shift();
-      try {
-        await writer.write(writerAccount.address, task);
-      } catch(err) {
-        console.error(err);
-        failedTasks.push(task);
-      }
-    }
-  }
 
   function initializeExpress() {
     const express = require("express");
