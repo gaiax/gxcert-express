@@ -18,6 +18,7 @@ function mainnet() {
     "<PLEASE PUT POLYGON PRIVATE KEY>",
     common,
     [
+      //Access-Control-Allow-Origin list
       "http://localhost:3000",
       "https://gaiax.github.io",
     ]
