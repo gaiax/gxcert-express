@@ -99,8 +99,8 @@ function createServer(rpcHost, contractAddress, privateKey, common, allowedOrigi
       });
     });
     app.post("/group", (req, res) => {
-      const group = req.body;
-      writer.createGroup(writerAccount.address, group).then((transactionHash) => {
+      const signed = req.body;
+      writer.createGroup(writerAccount.address, signed).then((transactionHash) => {
         res.status(201).json({
           transactionHash,
           message: "Successfully created the group",
