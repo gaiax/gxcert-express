@@ -129,7 +129,7 @@ function createServer(rpcHost, contractAddress, privateKey, common, allowedOrigi
       writer.disableGroupMember(writerAccount.address, groupId, signedAddress).then((transactionHash) => {
         res.status(200).json({
           transactionHash,
-          message: "Successfully invited the member.",
+          message: "Successfully disabled the member.",
         });
       }).catch(err => {
         res.status(500).json({
@@ -155,7 +155,7 @@ function createServer(rpcHost, contractAddress, privateKey, common, allowedOrigi
       writer.invalidateUserCert(writerAccount.address, signedUserCert).then((transactionHash) => {
         res.status(200).json({
           transactionHash,
-          message: "Successfully invited the member.",
+          message: "Successfully invalidated the member.",
         });
       }).catch(err => {
         res.status(500).json({
